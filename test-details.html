@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Details | Clinical Laboratory</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="form.css">
+    <style>
+        .page-banner {
+            background: linear-gradient(
+                rgba(0, 119, 182, 0.92),
+                rgba(2, 62, 138, 0.92)
+            );
+
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+            border-radius: 0 0 25px 25px;
+        }
+
+        .page-banner h2 {
+            color: white;
+            font-size: 34px;
+            margin-bottom: 10px;
+        }
+
+        .page-banner p {
+            color: white;
+            font-size: 17px;
+            max-width: 750px;
+            margin: auto;
+        }
+
+        .details-intro {
+            background-color: white;
+            padding: 30px;
+            margin: 30px auto;
+            border-radius: 18px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.10);
+            text-align: center;
+        }
+
+        .details-intro h2 {
+            color: #0077b6;
+        }
+
+        .details-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+            margin: 30px auto;
+        }
+
+        .detail-card {
+            background-color: white;
+            width: 290px;
+            padding: 25px;
+            border-radius: 16px;
+            border-top: 5px solid #0077b6;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+            transition: 0.3s;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        .detail-card h3 {
+            color: #0077b6;
+            margin-top: 0;
+        }
+
+        .detail-card h4 {
+            color: #023e8a;
+            margin-bottom: 5px;
+        }
+
+        .detail-card p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .detail-card ul {
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .sample-box {
+            background-color: #e7f8ff;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 40px auto;
+            border: 1px solid #90e0ef;
+        }
+
+        .sample-box h2 {
+            color: #023e8a;
+        }
+
+        .important-box {
+            background-color: white;
+            padding: 25px;
+            border-radius: 16px;
+            margin: 30px auto 40px;
+            border-left: 6px solid #0077b6;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+        }
+
+        .important-box h2 {
+            color: #0077b6;
+        }
+
+        .important-box li {
+            margin-bottom: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .detail-card {
+                width: 90%;
+            }
+
+            .page-banner h2 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<header
+    style="
+        background-color:#0077b6;
+        color:white;
+        text-align:center;
+        padding:28px;
+        border-bottom:4px solid #023e8a;
+    "
+>
+    <h1 style="color:white; margin:0;"> 
+        🧪 CLINICAL LABORATORY MANAGEMENT SYSTEM
+    </h1>
+
+    <p style="color:white; font-size:18px;">
+        <i>
+            Accurate Diagnostics for Better Healthcare
+        </i>
+    </p>
+</header>
+
+
+<!--NAVIGATION-->
+<nav>
+    <a href="index.html">
+        🏠 Home
+    </a>
+
+    <a href="laboratory-tests.html">
+        🧪 Laboratory Tests
+    </a>
+
+    <a href="test-details.html">
+        📋 Test Details
+    </a>
+
+    <a href="health-information.html">
+        💙 Health Information
+    </a>
+
+    <a href="patient-registration.html">
+        📝 Registration
+    </a>
+
+    <a href="gallery.html">
+        🖼️ Gallery
+    </a>
+
+    <a href="test-price-table.html">
+        💰 Price List
+    </a>
+
+    <a href="media.html">
+        🎥 Awareness
+    </a>
+</nav>
+
+
+<!-- PAGE BANNER -->
+
+<section class="page-banner">
+    <h2>
+        📋 Laboratory Test Details
+    </h2>
+
+    <p>
+        Understand the purpose, sample requirements
+        and basic information about commonly performed
+        laboratory tests.
+    </p>
+</section>
+
+
+<!-- MAIN CONTENT -->
+
+<main>
+    <!-- Introduction -->
+    <section class="details-intro">
+        <h2>
+            Understanding Your Laboratory Tests
+        </h2>
+
+        <p>
+
+            Laboratory tests help healthcare professionals
+            detect, diagnose and monitor different medical
+            conditions. Each test uses a specific type of
+            sample and follows a particular testing procedure.
+
+        </p>
+    </section>
+
+    <!--TEST DETAILS-->
+
+    <section>
+        <div class="details-container">
+            <!-- CBC -->
+            <div class="detail-card">
+                <h3>
+                    🩸 Complete Blood Count
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+                    Evaluates the different components of blood
+                    including red blood cells, white blood cells,
+                    hemoglobin and platelets.
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Blood
+                </p>
+
+                <h4>
+                    Helps Detect
+                </h4>
+
+                <ul>
+                    <li>Anemia</li>
+                    <li>Infections</li>
+                    <li>Blood disorders</li>
+                </ul>
+            </div>
+            <!-- Blood Glucose -->
+            <div class="detail-card">
+                <h3>
+                    🍬 Blood Glucose
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+
+                    Measures the amount of glucose present
+                    in the blood.
+
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Blood
+                </p>
+
+                <h4>
+                    Helps Detect
+                </h4>
+
+                <ul>
+                    <li>Diabetes</li>
+                    <li>High blood sugar</li>
+                    <li>Low blood sugar</li>
+                </ul>
+            </div>
+
+            <!-- Urine Routine -->
+            <div class="detail-card">
+                <h3>
+                    🧪 Urine Routine Examination
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+                    Examines urine for physical, chemical
+                    and microscopic abnormalities.
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Urine
+                </p>
+
+                <h4>
+                    Helps Detect
+                </h4>
+
+                <ul>
+                    <li>Urinary infections</li>
+                    <li>Kidney problems</li>
+                    <li>Abnormal urine composition</li>
+                </ul>
+            </div>
+
+
+            <!-- Hemoglobin -->
+
+            <div class="detail-card">
+                <h3>
+                    🩸 Hemoglobin Test
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+                    Measures the amount of hemoglobin in the
+                    blood, which carries oxygen throughout
+                    the body.
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Blood
+                </p>
+
+                <h4>
+                    Helps Detect
+                </h4>
+
+                <ul>
+                    <li>Anemia</li>
+                    <li>Low hemoglobin</li>
+                    <li>Other blood-related conditions</li>
+                </ul>
+            </div>
+
+
+            <!-- Lipid Profile -->
+
+            <div class="detail-card">
+                <h3>
+                    ❤️ Lipid Profile
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+                    Measures different types of cholesterol
+                    and triglycerides in the blood.
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Blood
+                </p>
+
+                <h4>
+                    Helps Assess
+                </h4>
+
+                <ul>
+                    <li>Cholesterol levels</li>
+                    <li>Triglycerides</li>
+                    <li>Heart disease risk</li>
+                </ul>
+
+            </div>
+
+
+            <!-- Liver Function -->
+
+            <div class="detail-card">
+
+                <h3>
+                    🧬 Liver Function Test
+                </h3>
+
+                <h4>
+                    Purpose
+                </h4>
+
+                <p>
+
+                    Measures substances in the blood that
+                    provide information about liver function.
+
+                </p>
+
+                <h4>
+                    Sample Required
+                </h4>
+
+                <p>
+                    Blood
+                </p>
+
+                <h4>
+                    Helps Assess
+                </h4>
+
+                <ul>
+
+                    <li>Liver function</li>
+
+                    <li>Liver injury</li>
+
+                    <li>Related disorders</li>
+
+                </ul>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SAMPLE INFORMATION ================= -->
+
+    <section class="sample-box">
+
+        <h2>
+            🧴 Common Sample Types
+        </h2>
+
+        <p>
+
+            Different laboratory tests require different
+            biological samples. Common samples include:
+
+        </p>
+
+        <ul>
+
+            <li>
+                🩸 Blood samples
+            </li>
+
+            <li>
+                🧪 Urine samples
+            </li>
+
+            <li>
+                🧫 Swab samples
+            </li>
+
+            <li>
+                🧬 Other specialized biological samples
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <!-- ================= IMPORTANT INSTRUCTIONS ================= -->
+
+    <section class="important-box">
+
+        <h2>
+            ⚠️ Important Patient Instructions
+        </h2>
+
+        <ul>
+
+            <li>
+                Follow any fasting instructions given by
+                your doctor or laboratory.
+            </li>
+
+            <li>
+                Inform the laboratory staff about any
+                medications you are taking.
+            </li>
+
+            <li>
+                Provide the correct patient information
+                during registration.
+            </li>
+
+            <li>
+                Follow the sample collection instructions
+                provided by the laboratory staff.
+            </li>
+
+            <li>
+                Ask the laboratory staff if you have any
+                questions regarding the test.
+            </li>
+
+        </ul>
+
+    </section>
+
+
+</main>
+
+
+<!--FOOTER-->
+
+<footer>
+
+    <p>
+
+        <strong>
+            Clinical Laboratory Management System
+        </strong>
+
+        <br>
+
+        Accurate Diagnostics • Better Healthcare
+
+        <br>
+
+        &copy; 2026 All Rights Reserved.
+
+    </p>
+
+</footer>
+
+
+</body>
+
+</html>

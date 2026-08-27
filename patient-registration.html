@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Patient Registration</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="table.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+
+<body>
+
+<header>
+
+    <h1>🧪 Online Patient Registration</h1>
+    <h3><i>Clinical Laboratory Management System</i></h3>
+
+</header>
+
+<nav>
+
+    <a href="index.html">🏠 Home</a>
+    <a href="laboratory-tests.html">🧪 Laboratory Tests</a>
+    <a href="patient-registration.html">📝 Online Registration</a>
+    <a href="gallery.html">🖼️ Gallery</a>
+    <a href="test-price-table.html">💰 Price List</a>
+
+</nav>
+
+<main>
+
+<form>
+
+<fieldset>
+
+<legend><b>Patient Registration Form</b></legend>
+
+<br>
+
+<label for="name">Patient Name:</label><br>
+
+<input type="text"
+       id="name"
+       name="name"
+       placeholder="Enter your full name"
+       required
+       autofocus>
+
+<br><br>
+
+<label for="age">Age:</label><br>
+
+<input type="number"
+       id="age"
+       name="age"
+       min="1"
+       max="120"
+       placeholder="Enter your age"
+       required>
+
+<br><br>
+
+<label>Gender:</label><br>
+
+<input type="radio" id="male" name="gender" required>
+<label for="male">Male</label>
+
+<input type="radio" id="female" name="gender">
+<label for="female">Female</label>
+
+<input type="radio" id="other" name="gender">
+<label for="other">Other</label>
+
+<br><br>
+
+<label for="mobile">Mobile Number:</label><br>
+
+<input type="tel"
+       id="mobile"
+       name="mobile"
+       placeholder="9876543210"
+       pattern="[0-9]{10}"
+       required>
+
+<br><br>
+
+<label for="email">Email Address:</label><br>
+
+<input type="email"
+       id="email"
+       name="email"
+       placeholder="example@gmail.com"
+       required>
+
+<br><br>
+
+<label for="dob">Date of Birth:</label><br>
+
+<input type="date"
+       id="dob"
+       name="dob"
+       required>
+
+<br><br>
+
+<label for="test">Select Test:</label><br>
+
+<select id="test" name="test" required>
+
+    <option value="">--Select Test--</option>
+    <option>CBC</option>
+    <option>HbA1c</option>
+    <option>LFT</option>
+    <option>KFT</option>
+    <option>ECG</option>
+    <option>Blood Sugar</option>
+    <option>Thyroid Profile</option>
+
+</select>
+
+<br><br>
+
+<label for="appointment">Preferred Appointment Date:</label><br>
+
+<input type="date"
+       id="appointment"
+       name="appointment"
+       required>
+
+<br><br>
+
+<label for="sample">Sample Collection Preference:</label><br>
+
+<select id="sample" name="sample" required>
+
+    <option value="">--Select--</option>
+    <option>Visit Laboratory</option>
+    <option>Home Sample Collection</option>
+
+</select>
+
+<br><br>
+
+<label for="prescription">Upload Doctor Prescription:</label><br>
+
+<input type="file"
+       id="prescription"
+       name="prescription"
+       accept=".pdf,.jpg,.jpeg,.png"
+       required>
+
+<br><br>
+
+<input type="submit" value="Register">
+<input type="reset" value="Clear Form">
+
+</fieldset>
+
+</form>
+
+</main>
+
+<footer>
+
+    <p>&copy; 2026 Clinical Laboratory Management System</p>
+
+</footer>
+
+</body>
+</html>
