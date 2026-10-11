@@ -1,59 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Interactive Urine Test Strip</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="form.css">
-
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>CLINICAL LABORATORY MANAGEMENT SYSTEM</h1>
+        <h3><i>Accurate Diagnostics for Better Healthcare!</i></h3>
+    </header>
 
-    <h1>🧪 Interactive Urine Test Strip</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="laboratory-tests.html">Laboratory Tests</a>
+        <a href="test-details.html">Test Details</a>
+        <a href="patient-registration.html">Registration</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="test-price-table.html">Price List</a>
+        <a href="media.html">Awareness</a>
+    </nav>
 
-    <h3>
-        <i>Click on a test pad to learn more</i>
-    </h3>
-
-</header>
-
-
-<nav>
-
-    <a href="index.html">🏠 Home</a>
-
-    <a href="laboratory-tests.html">
-        🧪 Laboratory Tests
-    </a>
-
-    <a href="test-details.html">
-        📋 Test Details
-    </a>
-
-    <a href="patient-registration.html">
-        📝 Registration
-    </a>
-
-    <a href="gallery.html">
-        🖼️ Gallery
-    </a>
-
-    <a href="test-price-table.html">
-        💰 Price List
-    </a>
-
-</nav>
-
-
-<main>
+    <section class="page-banner">
+        <h2>Interactive Urine Test Strip</h2>
+        <p>Select a test pad to learn what it screens for and see the typical result.</p>
+    </section>
 
     <section class="map-card">
 
@@ -66,7 +41,6 @@
             detailed information about that parameter.
         </p>
 
-
         <img
             src="urine-strip.png"
             alt="Interactive Urine Test Strip"
@@ -75,54 +49,63 @@
             height="1536"
             usemap="#urinemap">
 
-
         <map name="urinemap">
-
             <area
                 shape="rect"
                 coords="322,185,428,324"
-                href="glucose.html"
+                href="#detail-glucose"
                 alt="Glucose Pad"
                 title="Glucose Pad">
-
 
             <area
                 shape="rect"
                 coords="322,401,428,540"
-                href="protein.html"
+                href="#detail-protein"
                 alt="Protein Pad"
                 title="Protein Pad">
-
 
             <area
                 shape="rect"
                 coords="322,617,428,755"
-                href="blood.html"
+                href="#detail-blood"
                 alt="Blood Pad"
                 title="Blood Pad">
-
 
             <area
                 shape="rect"
                 coords="322,818,428,957"
-                href="ketone.html"
+                href="#detail-ketone"
                 alt="Ketone Pad"
                 title="Ketone Pad">
-
 
             <area
                 shape="rect"
                 coords="322,1032,428,1171"
-                href="ph.html"
+                href="#detail-ph"
                 alt="pH Pad"
                 title="pH Pad">
-
         </map>
 
     </section>
 
-</main>
+    <section class="test-category" aria-labelledby="strip-guide-title">
+        <h2 id="strip-guide-title">Urine strip guide</h2>
+        <p>These screening results are interpreted alongside symptoms and other clinical findings. A clinician can explain what a result means for you.</p>
 
+        <div class="test-grid">
+            <article class="test-box" id="detail-glucose"><h3>Glucose</h3><p>Detects sugar in urine. Glucose may be present with elevated blood glucose, including diabetes, and should be assessed with appropriate follow-up.</p><p><strong>Typical result:</strong> Negative</p></article>
+
+            <article class="test-box" id="detail-protein"><h3>Protein</h3><p>Checks for protein, which is usually absent or present only in small amounts. Persistent elevation can be associated with kidney conditions.</p><p><strong>Typical result:</strong> Negative or trace</p></article>
+
+            <article class="test-box" id="detail-blood"><h3>Blood</h3><p>Screens for blood in urine. Possible causes include infection, stones, kidney conditions, or injury; further assessment may be needed.</p><p><strong>Typical result:</strong> Negative</p></article>
+
+            <article class="test-box" id="detail-ketone"><h3>Ketones</h3><p>Detects substances produced when the body uses fat for energy. Ketones can occur with fasting, vomiting, or poorly controlled diabetes.</p><p><strong>Typical result:</strong> Negative</p></article>
+
+            <article class="test-box" id="detail-ph"><h3>pH</h3><p>Measures urine acidity or alkalinity. Diet, hydration, and some health conditions can affect the result.</p><p><strong>Typical range:</strong> About 4.5–8.0</p></article>
+        </div>
+    </section>
+
+</main>
 
 <footer>
 
@@ -132,6 +115,23 @@
 
 </footer>
 
+<script>
+(function () {
+    const image = document.querySelector('img[usemap]');
+    const areas = document.querySelectorAll('map[name="urinemap"] area');
+    const original = Array.from(areas, area => area.coords.split(',').map(Number));
+    function scaleAreas() {
+        if (!image.naturalWidth) return;
+        const scale = image.clientWidth / image.naturalWidth;
+        areas.forEach((area, index) => {
+            area.coords = original[index].map(value => Math.round(value * scale)).join(',');
+        });
+    }
+    image.addEventListener('load', scaleAreas);
+    window.addEventListener('resize', scaleAreas);
+    if (image.complete) scaleAreas();
+}());
+</script>
 </body>
 
 </html>

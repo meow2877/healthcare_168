@@ -1,63 +1,58 @@
-/* ---------- REGISTRATION FORM ---------- */
-
 form {
     width: 70%;
-    margin: 30px auto;
+    margin: 25px auto;
 }
 
 fieldset {
-    border: 3px solid #0077b6;
-    border-radius: 15px;
     padding: 25px;
     background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 2px solid #167d83;
 }
 
 legend {
-    color: #0077b6;
-    font-size: 22px;
-    padding: 5px 10px;
+    padding: 5px;
+    color: #142c45;
+    font-size: 20px;
 }
 
 label {
+    color: #24384a;
     font-weight: bold;
 }
 
 input,
 select {
-    width: 90%;
-    padding: 10px;
-    margin: 8px 0 15px;
-    border: 1px solid #0077b6;
-    border-radius: 8px;
+    width: 100%;
+    margin: 5px 0 12px;
+    padding: 9px;
+    border: 1px solid #aab8c2;
 }
 
 input:focus,
 select:focus {
-    outline: none;
-    border: 2px solid #023e8a;
-    box-shadow: 0 0 5px #90e0ef;
+    outline: 2px solid #167d83;
 }
 
-input[type="radio"] {
+input[type=radio],
+input[type=checkbox] {
     width: auto;
 }
 
-input[type="file"] {
-    background-color: #f4fbff;
+input[type=file] {
+    background-color: #eaf4f3;
 }
 
-input[type="submit"],
-input[type="reset"] {
-    width: 150px;
-    background-color: #0077b6;
+input[type=submit],
+input[type=reset] {
+    width: auto;
+    padding: 9px 14px;
+    background-color: #11666c;
+    border: 0;
     color: white;
-    border: none;
     cursor: pointer;
-    margin-right: 10px;
 }
 
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-    background-color: #023e8a;
+input[type=submit]:hover,
+input[type=reset]:hover {
+    background-color: #142c45;
 }

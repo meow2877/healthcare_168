@@ -1,32 +1,19 @@
 .layout {
-    display: flex;
-    gap: 25px;
     width: 90%;
-    margin: 30px auto;
-    align-items: flex-start;
+    margin: 25px auto;
+    overflow: hidden;
 }
 
 .sidebar {
-    width: 25%;
+    float: left;
+    width: 27%;
 }
 
 .content {
-    width: 75%;
+    float: right;
+    width: 70%;
 }
 
 footer {
     clear: both;
-}
-
-@media (max-width: 768px) {
-
-    .layout {
-        flex-direction: column;
-    }
-
-    .sidebar,
-    .content {
-        width: 100%;
-    }
-
 }

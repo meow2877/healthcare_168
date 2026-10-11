@@ -1,149 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
     <title>Patient Awareness</title>
-
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="table.css">
     <link rel="stylesheet" href="form.css">
-
 </head>
 
 <body>
 
-<header>
+    <header>
+        <h1>CLINICAL LABORATORY MANAGEMENT SYSTEM</h1>
+        <h3><i>Accurate Diagnostics for Better Healthcare!</i></h3>
+    </header>
 
-    <h1>🎥 Patient Awareness Centre</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="laboratory-tests.html">Laboratory Tests</a>
+        <a href="test-details.html">Test Details</a>
+        <a href="patient-registration.html">Registration</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="test-price-table.html">Price List</a>
+        <a href="media.html">Awareness</a>
+    </nav>
 
-    <h3>
-        <i>Clinical Laboratory Management System</i>
-    </h3>
-
-</header>
-
-
-<nav>
-
-    <a href="index.html">🏠 Home</a>
-
-    <a href="laboratory-tests.html">
-        🧪 Laboratory Tests
-    </a>
-
-    <a href="test-details.html">
-        📋 Test Details
-    </a>
-
-    <a href="patient-registration.html">
-        📝 Registration
-    </a>
-
-    <a href="gallery.html">
-        🖼️ Gallery
-    </a>
-
-    <a href="test-price-table.html">
-        💰 Price List
-    </a>
-
-    <a href="media.html">
-        🎥 Patient Awareness
-    </a>
-
-</nav>
-
-
-<main>
-
-    <section class="media-card">
-
-        <h2>
-            🎥 Video: Laboratory Sample Collection Procedure
-        </h2>
-
-        <video
-            width="700"
-            height="400"
-            controls
-            autoplay
-            loop>
-
-            <source
-                src="sample-collection.mp4"
-                type="video/mp4">
-
-            Your browser does not support the video tag.
-
-        </video>
-
+    <section class="page-banner">
+        <h2>Patient Awareness</h2>
+        <p>Patient safety guidance and pre-test instructions in audio format.</p>
     </section>
 
+    <main>
 
-    <section class="media-card">
+        <section class="media-card">
+            <h2>Patient Awareness Video</h2>
+            <div class="video-frame">
+                <iframe src="https://www.youtube-nocookie.com/embed/jCWz1Zl9Wj0" title="World Patient Safety Day awareness video" loading="lazy" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
 
-        <h2>
-            🔊 Audio: Instructions Before Laboratory Testing
-        </h2>
+        <section class="media-card">
+            <h2>
+                Audio: Instructions Before Laboratory Testing
+            </h2>
 
-        <audio
-            controls
-            autoplay
-            loop>
+            <audio controls>
+                <source
+                    src="patient-instructions.mp3"
+                    type="audio/mpeg">
+                Your browser does not support the audio tag.
+            </audio>
+        </section>
 
-            <source
-                src="patient-instructions.mp3"
-                type="audio/mpeg">
+        <section class="content-card">
+            <h3> Instructions for Patients</h3>
+            <ul>
+                <li>
+                    Carry a valid doctor's prescription.
+                </li>
 
-            Your browser does not support the audio tag.
+                <li>
+                    Follow fasting instructions if advised.
+                </li>
 
-        </audio>
+                <li>
+                    Drink plenty of water before sample collection
+                    unless instructed otherwise.
+                </li>
 
-    </section>
+                <li>
+                    Reach the laboratory at least 15 minutes
+                    before your appointment.
+                </li>
+            </ul>
+        </section>
 
+    </main>
 
-    <section class="content-card">
-
-        <h3>📋 Instructions for Patients</h3>
-
-        <ul>
-
-            <li>
-                Carry a valid doctor's prescription.
-            </li>
-
-            <li>
-                Follow fasting instructions if advised.
-            </li>
-
-            <li>
-                Drink plenty of water before sample collection
-                unless instructed otherwise.
-            </li>
-
-            <li>
-                Reach the laboratory at least 15 minutes
-                before your appointment.
-            </li>
-
-        </ul>
-
-    </section>
-
-</main>
-
-
-<footer>
-
-    <p>
-        &copy; 2026 Clinical Laboratory Management System
-    </p>
-
-</footer>
-
+    <footer>
+        <p>
+            &copy; 2026 Clinical Laboratory Management System
+        </p>
+    </footer>
 </body>
-
 </html>

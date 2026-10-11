@@ -13,29 +13,30 @@
 <body>
 
 <header>
-
-    <h1>🧪 Online Patient Registration</h1>
-    <h3><i>Clinical Laboratory Management System</i></h3>
-
+    <h1>CLINICAL LABORATORY MANAGEMENT SYSTEM</h1>
+    <h3><i>Accurate Diagnostics for Better Healthcare!</i></h3>
 </header>
 
 <nav>
-
-    <a href="index.html">🏠 Home</a>
-    <a href="laboratory-tests.html">🧪 Laboratory Tests</a>
-    <a href="patient-registration.html">📝 Online Registration</a>
-    <a href="gallery.html">🖼️ Gallery</a>
-    <a href="test-price-table.html">💰 Price List</a>
-
+    <a href="index.html">Home</a>
+    <a href="laboratory-tests.html">Laboratory Tests</a>
+    <a href="test-details.html">Test Details</a>
+    <a href="patient-registration.html">Registration</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="test-price-table.html">Price List</a>
+    <a href="media.html">Awareness</a>
 </nav>
+
+<section class="page-banner">
+    <h2>Patient Registration</h2>
+    <p>Submit your details to begin registration with the clinical laboratory.</p>
+</section>
 
 <main>
 
-<form>
+<form onsubmit="return handleRegistration(event)">
 
 <fieldset>
-
-<legend><b>Patient Registration Form</b></legend>
 
 <br>
 
@@ -46,7 +47,19 @@
        name="name"
        placeholder="Enter your full name"
        required
-       autofocus>
+       autofocus aria-describedby="name-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)" pattern="[A-Za-z][A-Za-z .'-]*" title="Letters, spaces, apostrophes, periods and hyphens only">
+<small class="field-error" id="name-error" role="status" aria-live="polite"></small>
+
+<br><br>
+
+<label for="patientId">Patient ID:</label><br>
+
+<input type="text"
+       id="patientId"
+       name="patientId"
+       placeholder="Enter patient ID"
+       required aria-describedby="patientId-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)">
+<small class="field-error" id="patientId-error" role="status" aria-live="polite"></small>
 
 <br><br>
 
@@ -58,22 +71,123 @@
        min="1"
        max="120"
        placeholder="Enter your age"
+       required aria-describedby="age-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)">
+<small class="field-error" id="age-error" role="status" aria-live="polite"></small>
+
+<br><br>
+
+
+<!-- TASK 2 -->
+
+<label for="temperature">Temperature (C):</label><br>
+
+<input type="number"
+       id="temperature"
+       name="temperature"
+       step="0.1"
+       placeholder="Enter temperature"
        required>
 
 <br><br>
 
+<label for="severity">Severity Level:</label><br>
+
+<select id="severity" name="severity" required>
+
+    <option value="">--Select Severity--</option>
+    <option value="Mild">Mild</option>
+    <option value="Moderate">Moderate</option>
+    <option value="Severe">Severe</option>
+
+</select>
+
+<br><br>
+
+<label>Emergency Status:</label><br>
+
+<input type="radio"
+       id="emergencyYes"
+       name="emergency"
+       value="Yes"
+       required>
+
+<label for="emergencyYes">Yes</label>
+
+<input type="radio"
+       id="emergencyNo"
+       name="emergency"
+       value="No">
+
+<label for="emergencyNo">No</label>
+
+<br><br>
+
+
+<!-- GENDER -->
+
 <label>Gender:</label><br>
 
-<input type="radio" id="male" name="gender" required>
+<input type="radio"
+       id="male"
+       name="gender"
+       value="Male"
+       required>
+
 <label for="male">Male</label>
 
-<input type="radio" id="female" name="gender">
+<input type="radio"
+       id="female"
+       name="gender"
+       value="Female">
+
 <label for="female">Female</label>
 
-<input type="radio" id="other" name="gender">
+<input type="radio"
+       id="other"
+       name="gender"
+       value="Other">
+
 <label for="other">Other</label>
 
 <br><br>
+
+
+<!-- TASK 3 -->
+
+<label for="bloodGroup">Blood Group:</label><br>
+
+<select id="bloodGroup" name="bloodGroup" required>
+
+    <option value="">--Select Blood Group--</option>
+    <option>A+</option>
+    <option>A-</option>
+    <option>B+</option>
+    <option>B-</option>
+    <option>AB+</option>
+    <option>AB-</option>
+    <option>O+</option>
+    <option>O-</option>
+
+</select>
+
+<br><br>
+
+<label for="department">Department:</label><br>
+
+<select id="department" name="department" required>
+
+    <option value="">--Select Department--</option>
+    <option>Hematology</option>
+    <option>Biochemistry</option>
+    <option>Microbiology</option>
+    <option>Cardiology</option>
+
+</select>
+
+<br><br>
+
+
+<!-- MOBILE -->
 
 <label for="mobile">Mobile Number:</label><br>
 
@@ -82,9 +196,13 @@
        name="mobile"
        placeholder="9876543210"
        pattern="[0-9]{10}"
-       required>
+       required aria-describedby="mobile-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)" title="Enter exactly 10 digits">
+<small class="field-error" id="mobile-error" role="status" aria-live="polite"></small>
 
 <br><br>
+
+
+<!-- EMAIL -->
 
 <label for="email">Email Address:</label><br>
 
@@ -92,44 +210,59 @@
        id="email"
        name="email"
        placeholder="example@gmail.com"
-       required>
+       required aria-describedby="email-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)">
+<small class="field-error" id="email-error" role="status" aria-live="polite"></small>
 
 <br><br>
+
+
+<!-- DATE OF BIRTH -->
 
 <label for="dob">Date of Birth:</label><br>
 
 <input type="date"
        id="dob"
        name="dob"
-       required>
+       required aria-describedby="dob-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)">
+<small class="field-error" id="dob-error" role="status" aria-live="polite"></small>
 
 <br><br>
+
+
+<!-- TEST -->
 
 <label for="test">Select Test:</label><br>
 
 <select id="test" name="test" required>
 
     <option value="">--Select Test--</option>
-    <option>CBC</option>
-    <option>HbA1c</option>
-    <option>LFT</option>
-    <option>KFT</option>
-    <option>ECG</option>
-    <option>Blood Sugar</option>
-    <option>Thyroid Profile</option>
+    <option value="500">CBC</option>
+    <option value="250">Hemoglobin (Hb)</option>
+    <option value="300">ESR</option>
+    <option value="800">LFT</option>
+    <option value="850">KFT</option>
+    <option value="300">Urine Routine Examination</option>
+    <option value="400">ECG</option>
 
 </select>
 
 <br><br>
+
+
+<!-- APPOINTMENT DATE -->
 
 <label for="appointment">Preferred Appointment Date:</label><br>
 
 <input type="date"
        id="appointment"
        name="appointment"
-       required>
+       required aria-describedby="appointment-error" oninput="validateRegistrationField(this.id)" onblur="validateRegistrationField(this.id)">
+<small class="field-error" id="appointment-error" role="status" aria-live="polite"></small>
 
 <br><br>
+
+
+<!-- SAMPLE COLLECTION -->
 
 <label for="sample">Sample Collection Preference:</label><br>
 
@@ -143,6 +276,9 @@
 
 <br><br>
 
+
+<!-- PRESCRIPTION -->
+
 <label for="prescription">Upload Doctor Prescription:</label><br>
 
 <input type="file"
@@ -153,8 +289,18 @@
 
 <br><br>
 
-<input type="submit" value="Register">
-<input type="reset" value="Clear Form">
+
+<!-- BUTTONS -->
+
+<input type="button"
+       value="Check Appointment Priority"
+       onclick="checkPriority()">
+
+<input type="submit"
+       value="Register">
+
+<input type="reset"
+       value="Clear Form">
 
 </fieldset>
 
@@ -168,5 +314,240 @@
 
 </footer>
 
+
+<script>
+
+
+// TASK 1
+// Patient Registration Fee Calculation
+
+function calculateRegistration() {
+
+    let patientName =
+        document.getElementById("name").value;
+
+    let patientId =
+        document.getElementById("patientId").value;
+
+    let patientAge =
+        Number(document.getElementById("age").value);
+
+    let consultationFee =
+        Number(document.getElementById("test").value);
+
+    let registrationFee = 100;
+
+    let totalAmount =
+        consultationFee + registrationFee;
+
+    let discount = 0;
+
+    if (patientAge >= 60) {
+
+        discount = totalAmount * 0.10;
+
+        totalAmount =
+            totalAmount - discount;
+
+    }
+
+    let registrationStatus =
+        "Registration Successful";
+
+
+    alert(
+        "Patient Name: " + patientName +
+        "\nPatient ID: " + patientId +
+        "\nTotal Amount: ₹" + totalAmount +
+        "\nRegistration Status: " + registrationStatus
+    );
+
+
+    console.log("Patient Name: " + patientName);
+    console.log("Patient ID: " + patientId);
+    console.log("Patient Age: " + patientAge);
+    console.log("Consultation Fee: ₹" + consultationFee);
+    console.log("Registration Fee: ₹" + registrationFee);
+    console.log("Senior Citizen Discount: ₹" + discount);
+    console.log("Total Amount: ₹" + totalAmount);
+    console.log("Registration Status: " + registrationStatus);
+    window.location.href = 'index.html';
+
+
+}
+
+
+// TASK 2
+// Patient Appointment Priority
+
+function checkPriority() {
+
+    let patientAge =
+        Number(document.getElementById("age").value);
+
+    let temperature =
+        Number(document.getElementById("temperature").value);
+
+    let severity =
+        document.getElementById("severity").value;
+
+    let emergency =
+        document.querySelector(
+            'input[name="emergency"]:checked'
+        ).value;
+
+    let recommendation;
+
+
+    if (emergency === "Yes") {
+
+        recommendation =
+            "Emergency Consultation Required";
+
+    }
+
+    else if (temperature >= 39) {
+
+        recommendation =
+            "High Priority Consultation";
+
+    }
+
+    else if (severity === "Severe") {
+
+        recommendation =
+            "High Priority Consultation";
+
+    }
+
+    else if (patientAge >= 60 &&
+             severity === "Moderate") {
+
+        recommendation =
+            "Priority Consultation";
+
+    }
+
+    else {
+
+        recommendation =
+            "Regular Consultation";
+
+    }
+
+
+    alert(
+        "Appointment Recommendation: " +
+        recommendation
+    );
+
+
+    console.log("Patient Age: " + patientAge);
+    console.log("Temperature: " + temperature + "C");
+    console.log("Severity: " + severity);
+    console.log("Emergency Status: " + emergency);
+    console.log("Recommendation: " + recommendation);
+
+}
+
+
+// TASK 5
+// Patient Registration Validation Using Regular Expressions
+
+function setFieldMessage(fieldId, message) {
+    const field = document.getElementById(fieldId);
+    const messageNode = document.getElementById(fieldId + "-error");
+    if (!field) return;
+    if (messageNode) messageNode.textContent = message;
+    field.setAttribute("aria-invalid", message ? "true" : "false");
+    field.setCustomValidity(message || "");
+}
+
+function localDateString() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, "0");
+    const day = String(today.getDate()).padStart(2, "0");
+    return `${year}-${month}-${day}`;
+}
+
+function ageFromBirthDate(value) {
+    if (!value) return null;
+    const birthDate = new Date(`${value}T00:00:00`);
+    if (Number.isNaN(birthDate.getTime())) return null;
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const birthdayHasPassed = today.getMonth() > birthDate.getMonth() ||
+        (today.getMonth() === birthDate.getMonth() && today.getDate() >= birthDate.getDate());
+    if (!birthdayHasPassed) age--;
+    return age;
+}
+
+function validateRegistrationField(fieldId) {
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("mobile").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const patientId = document.getElementById("patientId").value.trim();
+    const ageValue = document.getElementById("age").value;
+    const birthDate = document.getElementById("dob").value;
+    const appointmentDate = document.getElementById("appointment").value;
+    const today = localDateString();
+
+    const nameError = name && !/^[A-Za-z][A-Za-z .'-]*$/.test(name)
+        ? "Enter a valid name using letters, spaces, apostrophes, periods or hyphens." : "";
+    const phoneError = phone && !/^[0-9]{10}$/.test(phone)
+        ? "Enter a valid 10-digit phone number." : "";
+    const emailError = email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+        ? "Enter a valid email address, for example name@example.com." : "";
+    const patientIdError = patientId && !/^PAT-[0-9]{4}$/.test(patientId)
+        ? "Use the patient ID format PAT-1234." : "";
+
+    let birthDateError = birthDate && birthDate > today
+        ? "Date of birth cannot be after today." : "";
+    let ageError = "";
+    if (birthDate && !birthDateError && ageValue !== "") {
+        const calculatedAge = ageFromBirthDate(birthDate);
+        if (calculatedAge !== Number(ageValue)) {
+            ageError = `The selected birth date corresponds to age ${calculatedAge}.`;
+            birthDateError = "Birth date and entered age do not match.";
+        }
+    }
+    const appointmentError = appointmentDate && appointmentDate < today
+        ? "Appointment date cannot be before today." : "";
+
+    setFieldMessage("name", nameError);
+    setFieldMessage("mobile", phoneError);
+    setFieldMessage("email", emailError);
+    setFieldMessage("patientId", patientIdError);
+    setFieldMessage("dob", birthDateError);
+    setFieldMessage("age", ageError);
+    setFieldMessage("appointment", appointmentError);
+
+    return !nameError && !phoneError && !emailError && !patientIdError &&
+        !birthDateError && !ageError && !appointmentError;
+}
+
+function validatePatientDetails() {
+    return validateRegistrationField("name");
+}
+
+function handleRegistration(event) {
+    event.preventDefault();
+    const isValid = validateRegistrationField("name");
+    const form = event.currentTarget;
+    if (!isValid || !form.checkValidity()) {
+        form.reportValidity();
+        return false;
+    }
+    calculateRegistration();
+    return false;
+}
+
+const todayForRegistration = localDateString();
+document.getElementById("dob").max = todayForRegistration;
+document.getElementById("appointment").min = todayForRegistration;
+</script>
+
 </body>
+
 </html>
